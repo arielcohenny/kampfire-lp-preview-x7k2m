@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Kampfire - Turn your Summit into measurable post-event engagement (CAIS LP mockup)</title>
+  <meta name="description" content="Kampfire is the post-event engagement platform that brings premium-event audiences back on their own. See how the 2025 CAIS Alternative Investment Summit used it." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:         #0F1D3D;
+      --navy-deep:    #0A1226;
+      --navy-mid:     #1C2F5C;
+      --navy-body:    #3D4C6E;
+      --navy-muted:   #8890A8;
+      --flame:        #F5620F;
+      --flame-deep:   #D94400;
+      --amber:        #FF9500;
+      --yellow:       #FFC93C;
+      --bg-white:     #FFFFFF;
+      --bg-warm:      #F5F7FB;
+      --bg-warmer:    #EEF1F7;
+      --border:       #D8DEE8;
+
+      --font-display: 'Abril Fatface', serif;
+      --font-body:    'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius:       12px;
+      --radius-lg:    18px;
+      --shadow-sm:    0 2px 8px rgba(15,29,61,0.06);
+      --shadow-md:    0 8px 28px rgba(15,29,61,0.10);
+      --shadow-lg:    0 24px 60px rgba(15,29,61,0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--navy);
+      background: var(--bg-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    h1, h2, h3, h4 { line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; color: var(--navy); }
+    p { font-size: 1.05rem; color: var(--navy-body); }
+
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--flame);
+      margin-bottom: 22px;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,18,38,0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
+    }
+    .nav-logo img {
+      height: 34px;
+      width: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+    .nav-cta {
+      background: var(--flame);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 11px 22px;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(245,98,15,0.28);
+      transition: background 0.18s, transform 0.12s;
+    }
+    .nav-cta:hover { background: var(--flame-deep); transform: translateY(-1px); }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 15px 30px;
+      border-radius: 10px;
+      transition: transform 0.12s, background 0.18s, box-shadow 0.2s;
+      letter-spacing: -0.01em;
+    }
+    .btn--primary {
+      background: var(--flame);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(245,98,15,0.34);
+    }
+    .btn--primary:hover { background: var(--flame-deep); transform: translateY(-1px); }
+    .btn--ghost {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.28);
+    }
+    .btn--ghost:hover { border-color: #fff; background: rgba(255,255,255,0.05); }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      padding: 120px 0 120px;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('Cais assets/photo 2.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05) brightness(0.55);
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        radial-gradient(ellipse at 85% 15%, rgba(245,98,15,0.45) 0%, transparent 50%),
+        radial-gradient(ellipse at 8% 92%, rgba(255,149,0,0.22) 0%, transparent 55%),
+        linear-gradient(180deg, rgba(10,18,38,0.55) 0%, rgba(10,18,38,0.85) 60%, rgba(10,18,38,1) 100%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 380px;
+      gap: 56px;
+      align-items: center;
+    }
+    .hero-content { min-width: 0; }
+    .hero .eyebrow { color: var(--amber); }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      color: #fff;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 30px;
+    }
+    .hero h1 .flame-text { color: var(--flame); }
+    .hero-sub {
+      font-size: 1.3rem;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.82);
+      max-width: 680px;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+    .hero-sub strong { color: var(--amber); font-weight: 700; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* Hero visual (right column: photo + floating badge) */
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+    }
+    .hero-photo-frame {
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.55), 0 0 60px rgba(245,98,15,0.14);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .hero-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: none;
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: -28px;
+      left: -48px;
+      z-index: 3;
+      background: rgba(15,29,61,0.82);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(16px) saturate(1.2);
+      -webkit-backdrop-filter: blur(16px) saturate(1.2);
+      border-radius: 18px;
+      padding: 22px 26px;
+      max-width: 230px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.45), 0 0 40px rgba(245,98,15,0.28);
+    }
+    .hero-badge .big {
+      font-family: var(--font-display);
+      font-size: 3.8rem;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      background: linear-gradient(180deg, var(--yellow) 0%, var(--flame) 55%, var(--flame-deep) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 4px;
+    }
+    .hero-badge .sub {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.35;
+    }
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+    }
+
+    /* ── KPI strip (navy continuation) ── */
+    .kpi-section {
+      background: var(--navy-deep);
+      padding: 10px 0 96px;
+      position: relative;
+      overflow: hidden;
+    }
+    .kpi-section::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -120px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(245,98,15,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .kpi-inner { position: relative; z-index: 1; }
+    .kpi-divider {
+      width: 64px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--flame), var(--yellow));
+      margin: 0 auto 28px;
+      border-radius: 2px;
+    }
+    .kpi-eyebrow {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 48px;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 32px;
+    }
+    .kpi-cell {
+      text-align: center;
+      padding: 0 10px;
+      position: relative;
+    }
+    .kpi-ic {
+      width: 38px; height: 38px;
+      margin: 0 auto 14px;
+      border-radius: 10px;
+      background: rgba(245,98,15,0.14);
+      color: var(--amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .kpi-cell:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 12%;
+      right: -16px;
+      width: 1px;
+      height: 76%;
+      background: rgba(255,255,255,0.10);
+    }
+    .kpi-num {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      background: linear-gradient(180deg, var(--yellow) 0%, var(--flame) 55%, var(--flame-deep) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-variant-numeric: tabular-nums;
+      margin-bottom: 14px;
+    }
+    .kpi-lbl {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.4;
+    }
+    .kpi-caption {
+      text-align: center;
+      margin-top: 56px;
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.55);
+      font-weight: 500;
+    }
+
+    /* ── Section 3 · Problem ── */
+    .problem-section {
+      background: var(--bg-warm);
+      padding: 104px 0;
+    }
+    /* Before / With mini-comparison */
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 28px;
+      max-width: 820px;
+      margin: 0 auto 72px;
+    }
+    .compare-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      border: 1px solid var(--border);
+    }
+    .compare-card .lbl {
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      background: var(--navy);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+    .compare-card.after .lbl { background: var(--flame); }
+    .compare-before-mock {
+      background: #F5F7FB;
+      border-radius: 8px;
+      padding: 22px 18px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    }
+    .compare-before-mock .head {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--navy-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .compare-before-mock .subject {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .compare-before-mock .body-text {
+      font-size: 0.82rem;
+      color: var(--navy-body);
+      line-height: 1.5;
+    }
+    .compare-before-mock .link-look {
+      font-size: 0.8rem;
+      color: #5B6FA8;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+    .compare-before-mock .metric {
+      margin-top: 8px;
+      font-size: 0.74rem;
+      color: var(--navy-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .compare-before-mock .metric::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--navy-muted);
+    }
+    .compare-after-mock {
+      background: linear-gradient(135deg, #0F1D3D 0%, #1C2F5C 100%);
+      border-radius: 12px;
+      padding: 18px;
+      min-height: 180px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .compare-after-mock::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(245,98,15,0.3) 0%, transparent 70%);
+    }
+    .compare-after-mock .brand {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--amber);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      position: relative;
+    }
+    .compare-after-mock .title-l {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.3;
+      position: relative;
+    }
+    .compare-after-mock .grid-m {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-top: 4px;
+      position: relative;
+    }
+    .compare-after-mock .grid-m > div {
+      aspect-ratio: 1;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.12);
+    }
+    .compare-after-mock .cta-pill {
+      margin-top: auto;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--navy);
+      background: var(--yellow);
+      padding: 5px 12px;
+      border-radius: 100px;
+      align-self: flex-start;
+      position: relative;
+    }
+    .compare-arrow {
+      font-size: 2.4rem;
+      color: var(--flame);
+      line-height: 1;
+      font-weight: 900;
+    }
+    @media (max-width: 700px) {
+      .compare { grid-template-columns: 1fr; }
+      .compare-arrow { transform: rotate(90deg); margin: 0 auto; }
+    }
+    .problem-intro { max-width: 760px; margin-bottom: 56px; }
+    .problem-intro h2 {
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      margin-bottom: 18px;
+    }
+    .problem-intro p {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--navy-body);
+    }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .p-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px 30px;
+      position: relative;
+      transition: transform 0.18s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      overflow: hidden;
+    }
+    .p-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--flame), var(--amber));
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .p-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(245,98,15,0.25);
+    }
+    .p-card:hover::before { opacity: 1; }
+    .p-icon {
+      width: 96px; height: 76px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(245,98,15,0.10) 0%, rgba(255,201,60,0.10) 100%);
+      color: var(--flame);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .p-card h3 {
+      font-size: 1.08rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .p-card p {
+      font-size: 0.96rem;
+      color: var(--navy-body);
+      line-height: 1.55;
+    }
+
+    /* ── Section 4 · Solution ── */
+    .solution-section {
+      background: #fff;
+      padding: 112px 0;
+    }
+    .solution-intro { max-width: 820px; margin-bottom: 64px; }
+    .solution-intro h2 {
+      font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+      margin-bottom: 18px;
+    }
+    .solution-intro p {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--navy-body);
+    }
+    .solution-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      line-height: 1.55;
+    }
+    .feature-list .check {
+      flex-shrink: 0;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--flame) 0%, var(--flame-deep) 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 900;
+      margin-top: 2px;
+      box-shadow: 0 4px 14px rgba(245,98,15,0.35);
+    }
+    .feature-list h3 {
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+      font-weight: 800;
+    }
+    .feature-list p {
+      font-size: 0.98rem;
+      color: var(--navy-body);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .hub-showcase {
+      position: relative;
+      max-width: 420px;
+      margin: 0 auto;
+      padding-top: 14px;
+    }
+    .hub-showcase::before {
+      content: 'The Engagement Hub';
+      position: absolute;
+      top: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--navy);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      white-space: nowrap;
+      z-index: 2;
+    }
+    .hub-img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(13,43,82,0.08);
+      display: block;
+    }
+
+    /* ── Section 5 · How it works ── */
+    .how-section {
+      background: var(--bg-warm);
+      padding: 104px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .how-intro { max-width: 720px; margin: 0 auto 72px; text-align: center; }
+    .how-intro h2 {
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      margin-bottom: 18px;
+    }
+    .how-intro p {
+      font-size: 1.06rem;
+      line-height: 1.7;
+      color: var(--navy-body);
+    }
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      position: relative;
+    }
+    .how-grid::before {
+      content: '';
+      position: absolute;
+      top: 52px;
+      left: calc(16.66% + 40px);
+      right: calc(16.66% + 40px);
+      height: 2px;
+      background-image: linear-gradient(90deg, var(--flame) 0%, var(--flame) 50%, transparent 50%);
+      background-size: 14px 2px;
+      background-repeat: repeat-x;
+      opacity: 0.35;
+    }
+    .how-step { text-align: center; position: relative; padding: 0 12px; }
+    .step-topic {
+      width: 44px; height: 44px;
+      margin: 0 auto 14px;
+      border-radius: 10px;
+      background: rgba(245,98,15,0.10);
+      color: var(--flame);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-num {
+      width: 104px; height: 104px;
+      margin: 0 auto 28px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid transparent;
+      background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, var(--flame), var(--yellow));
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 10px 30px rgba(245,98,15,0.18);
+    }
+    .step-num span {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--flame) 0%, var(--flame-deep) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .how-step h3 {
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .how-step p {
+      font-size: 0.98rem;
+      color: var(--navy-body);
+      line-height: 1.65;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    /* ── Mid-page CTA band ── */
+    .mid-cta {
+      background: linear-gradient(135deg, var(--bg-warm) 0%, var(--bg-warmer) 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 0;
+      position: relative;
+    }
+    .mid-cta::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--flame) 0%, var(--amber) 100%);
+    }
+    .mid-cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .mid-cta h3 {
+      font-size: 1.32rem;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      max-width: 680px;
+    }
+    .mid-cta h3 em { font-style: normal; color: var(--flame); }
+    .mid-cta .btn {
+      flex-shrink: 0;
+    }
+
+    /* ── Section 6 · Why premium events ── */
+    .why-section {
+      background: linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 100%);
+      color: #fff;
+      padding: 112px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .why-section::before {
+      content: '';
+      position: absolute;
+      top: -240px; right: -200px;
+      width: 680px; height: 680px;
+      background: radial-gradient(circle, rgba(245,98,15,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .why-section::after {
+      content: '';
+      position: absolute;
+      bottom: -160px; left: -140px;
+      width: 540px; height: 540px;
+      background: radial-gradient(circle, rgba(255,149,0,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .why-intro {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      margin: 0 auto 64px;
+      text-align: center;
+    }
+    .why-intro .eyebrow { color: var(--amber); }
+    .why-intro h2 {
+      font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+      color: #fff;
+      margin-bottom: 18px;
+    }
+    .why-intro p {
+      font-size: 1.06rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.72);
+    }
+    .why-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+    .why-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius);
+      padding: 36px 34px 32px;
+      position: relative;
+      transition: transform 0.18s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+    .why-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(245,98,15,0.4);
+      background: rgba(245,98,15,0.05);
+    }
+    .why-card .num {
+      position: absolute;
+      top: 22px; right: 26px;
+      font-family: var(--font-display);
+      font-size: 3.2rem;
+      line-height: 1;
+      background: linear-gradient(180deg, var(--yellow) 0%, var(--flame) 55%, var(--flame-deep) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0.75;
+    }
+    .why-card .ic {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(245,98,15,0.15);
+      color: var(--amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .why-card h3 {
+      font-size: 1.18rem;
+      color: #fff;
+      margin-bottom: 12px;
+      padding-right: 70px;
+    }
+    .why-card p {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.55;
+    }
+
+    /* ── Section · Interactive calculator (standout panel) ── */
+    .calc-section {
+      background: #fff;
+      padding: 112px 0;
+      position: relative;
+    }
+    .calc-intro {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto 56px;
+      text-align: center;
+    }
+    .calc-intro h2 {
+      font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+      margin-bottom: 16px;
+    }
+    .calc-intro p {
+      font-size: 1.06rem;
+      line-height: 1.6;
+      color: var(--navy-body);
+    }
+    .calc-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
+      margin: 0 auto;
+      background: linear-gradient(160deg, #0A1226 0%, #0F1D3D 55%, #111A35 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 40px 100px rgba(15,29,61,0.35), 0 0 40px rgba(245,98,15,0.08);
+      overflow: hidden;
+      color: #fff;
+    }
+    .calc-wrap::before {
+      content: '';
+      position: absolute;
+      top: -140px; right: -140px;
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(245,98,15,0.30) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .calc-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: -120px; left: -120px;
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(255,201,60,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .calc-inputs {
+      position: relative;
+      z-index: 1;
+      padding: 40px 48px 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .calc-field label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 12px;
+    }
+    .calc-field .input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.04);
+      border: 1.5px solid rgba(255,255,255,0.14);
+      border-radius: 10px;
+      padding: 4px 14px;
+      transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+    .calc-field .input-wrap:focus-within {
+      border-color: var(--flame);
+      background: rgba(245,98,15,0.06);
+      box-shadow: 0 0 0 3px rgba(245,98,15,0.22);
+    }
+    .calc-field .input-wrap .prefix {
+      color: rgba(255,255,255,0.65);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+    .calc-field input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 13px 0;
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      background: transparent;
+      width: 100%;
+      font-variant-numeric: tabular-nums;
+    }
+    .calc-field input::placeholder { color: rgba(255,255,255,0.35); }
+    .calc-field .input-wrap .suffix {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+    .calc-field .hint {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.48);
+      margin-top: 8px;
+    }
+
+    /* Output table */
+    .calc-outputs {
+      position: relative;
+      z-index: 1;
+      padding: 6px 48px 40px;
+    }
+    .calc-head {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr;
+      gap: 22px;
+      padding: 22px 0 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+    .calc-head .col {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .calc-head .col.metric-h { color: rgba(255,255,255,0.55); }
+    .calc-head .col.without-h { color: rgba(255,255,255,0.55); text-align: left; }
+    .calc-head .col.with-h { color: var(--flame); text-align: left; }
+
+    .calc-row {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr;
+      align-items: center;
+      gap: 22px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .calc-row:last-child { border-bottom: none; }
+    .calc-row .metric {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.4;
+    }
+    .calc-row .metric .sub-m {
+      display: block;
+      font-weight: 400;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.8rem;
+      margin-top: 4px;
+    }
+    .calc-value {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+      color: rgba(255,255,255,0.75);
+    }
+    .calc-value.with-val {
+      background: linear-gradient(180deg, var(--yellow) 0%, var(--flame) 55%, var(--flame-deep) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .calc-cta-hint {
+      margin-top: 32px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .calc-cta-hint .txt {
+      font-size: 1rem;
+      color: var(--navy-body);
+      margin-bottom: 14px;
+    }
+    @media (max-width: 820px) {
+      .calc-inputs { grid-template-columns: 1fr; gap: 20px; padding: 28px 24px 32px; }
+      .calc-outputs { padding: 6px 24px 28px; }
+      .calc-head { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .calc-head .metric-h { display: none; }
+      .calc-row { grid-template-columns: 1fr 1fr; gap: 12px 16px; padding: 18px 0; }
+      .calc-row .metric { grid-column: 1 / -1; margin-bottom: 2px; }
+    }
+
+    /* ── Section · Final CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--flame) 0%, var(--flame-deep) 100%);
+      color: #fff;
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(255,201,60,0.30) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .cta-inner .eyebrow { color: var(--yellow); }
+    .cta-inner h2 {
+      font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+      color: #fff;
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+    .cta-inner > p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.6;
+      margin-bottom: 44px;
+    }
+    .cta-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 40px 36px 32px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+      text-align: left;
+    }
+    .cta-form-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy-muted);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .cta-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .cta-card input[type="text"],
+    .cta-card input[type="email"] {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      color: var(--navy);
+      font-size: 0.98rem;
+      font-family: var(--font-body);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .cta-card input[type="text"]::placeholder,
+    .cta-card input[type="email"]::placeholder { color: var(--navy-muted); }
+    .cta-card input[type="text"]:focus,
+    .cta-card input[type="email"]:focus {
+      border-color: var(--flame);
+      box-shadow: 0 0 0 3px rgba(245,98,15,0.14);
+    }
+    .cta-card button {
+      width: 100%;
+      margin-top: 10px;
+      background: var(--flame);
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.02rem;
+      padding: 16px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.18s, transform 0.12s;
+      box-shadow: 0 8px 24px rgba(245,98,15,0.34);
+      font-family: var(--font-body);
+      letter-spacing: -0.01em;
+    }
+    .cta-card button:hover {
+      background: var(--flame-deep);
+      transform: translateY(-1px);
+    }
+    .cta-fine {
+      margin-top: 18px;
+      font-size: 0.84rem;
+      color: var(--navy-muted);
+      text-align: center;
+    }
+    .cta-secondary {
+      margin-top: 28px;
+      text-align: center;
+    }
+    .cta-secondary a {
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(255,255,255,0.4);
+      transition: border-color 0.15s;
+    }
+    .cta-secondary a:hover { border-color: #fff; }
+
+    /* Variant D - Calendar embed */
+    .cta-calendar {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .cta-calendar .cal-placeholder {
+      width: 100%;
+      min-height: 440px;
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy-muted);
+      text-align: center;
+      padding: 40px 24px;
+      gap: 12px;
+    }
+    .cta-calendar .cal-placeholder .ic {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      background: rgba(245,98,15,0.10);
+      color: var(--flame);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+    .cta-calendar .cal-placeholder strong {
+      color: var(--navy);
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+    .cta-calendar .cal-placeholder span {
+      font-size: 0.95rem;
+      max-width: 340px;
+      line-height: 1.5;
+    }
+
+    /* Variant label banner - preview only */
+    .variant-label {
+      background: var(--navy);
+      color: #fff;
+      padding: 18px 0;
+      text-align: center;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .variant-label strong { color: var(--amber); }
+    .variant-label small {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--bg-dark, #0A1226);
+      background: #0A1226;
+      color: rgba(255,255,255,0.55);
+      padding: 56px 0 40px;
+      font-size: 0.88rem;
+    }
+    footer .foot-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    footer .foot-logo img {
+      height: 30px;
+      width: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+    footer .foot-tag { max-width: 420px; }
+    footer .foot-tag a { color: var(--flame); border-bottom: 1px solid rgba(245,98,15,0.35); }
+    footer nav.foot-links {
+      display: flex;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
+    footer nav.foot-links a {
+      color: rgba(255,255,255,0.55);
+      transition: color 0.15s;
+    }
+    footer nav.foot-links a:hover { color: #fff; }
+    footer .copy {
+      width: 100%;
+      padding-top: 26px;
+      margin-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.38);
+    }
+
+    /* ── Next-section placeholder ── */
+    .next-marker {
+      padding: 72px 0;
+      background: var(--bg-warmer);
+      text-align: center;
+      border-top: 1px dashed var(--border);
+    }
+    .next-marker p {
+      font-size: 0.9rem;
+      color: var(--navy-muted);
+      font-style: italic;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 20px; }
+      .kpi-cell:not(:last-child)::after { display: none; }
+      .kpi-cell:nth-child(5) { grid-column: 1 / -1; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .solution-grid { grid-template-columns: 1fr; gap: 48px; }
+      .how-grid { grid-template-columns: 1fr; gap: 56px; }
+      .how-grid::before { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .cta-form-grid { grid-template-columns: 1fr; }
+      .hero { padding: 88px 0 88px; }
+      footer .foot-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════ NAV -->
+<nav>
+  <div class="container nav-inner">
+    <a href="https://www.kampfire.online/" class="nav-logo" aria-label="Kampfire"><img src="KampFire-logo-0300.png" alt="Kampfire" /></a>
+    <a href="#demo" class="nav-cta">Book a demo →</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════ SECTION 1 · HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <span class="eyebrow">For premium events and flagship gatherings</span>
+      <h1>Your Summit ended Friday. By Monday, <span class="flame-text">your $2M audience is gone.</span></h1>
+      <p class="hero-sub">
+        The post-event engagement platform that brings your audience back on their own - measurably.
+      </p>
+      <div class="hero-actions">
+        <a href="#demo" class="btn btn--primary">Book a demo →</a>
+        <a href="case-study-cais.html" class="btn btn--ghost">Read the full CAIS story →</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-photo-frame">
+        <img src="Cais assets/photo 1.jpg" alt="CAIS Summit fireside chat on the main stage" />
+      </div>
+      <div class="hero-badge">
+        <div class="big">89%</div>
+        <div class="sub">Post-event attendee response rate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ SECTION 2 · KPI STRIP -->
+<section class="kpi-section">
+  <div class="container kpi-inner">
+    <div class="kpi-divider"></div>
+    <div class="kpi-eyebrow">The 2025 CAIS Alternative Investment Summit · by the numbers</div>
+
+    <div class="kpi-grid">
+      <div class="kpi-cell">
+        <div class="kpi-ic">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="kpi-num">1,015</div>
+        <div class="kpi-lbl">Engagement Hub visits</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-ic">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="kpi-num">89</div>
+        <div class="kpi-lbl">Highly engaged guests</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-ic">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <div class="kpi-num">1,656</div>
+        <div class="kpi-lbl">Photo previews</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-ic">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <div class="kpi-num">502</div>
+        <div class="kpi-lbl">Photo downloads</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-ic">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </div>
+        <div class="kpi-num">49,560</div>
+        <div class="kpi-lbl">Social reach</div>
+      </div>
+    </div>
+
+    <div class="kpi-caption">From a single premium Summit.</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ SECTION 3 · PROBLEM -->
+<section class="problem-section">
+  <div class="container">
+    <div class="problem-intro">
+      <span class="eyebrow">The problem</span>
+      <h2>Your event already worked. The follow-up is where it fails.</h2>
+    </div>
+
+    <div class="compare">
+      <div class="compare-card before">
+        <span class="lbl">Before</span>
+        <div class="compare-before-mock">
+          <div class="head">Event Team · Mon 09:14</div>
+          <div class="subject">Photos from the Summit</div>
+          <div class="body-text">Hi all, please find below the link to the event photos.</div>
+          <div class="link-look">dropbox.com/s/event-photos-2025-full.zip</div>
+          <div class="metric">opened once · 0 attributable pipeline</div>
+        </div>
+      </div>
+
+      <div class="compare-arrow">→</div>
+
+      <div class="compare-card after">
+        <span class="lbl">With Kampfire</span>
+        <div class="compare-after-mock">
+          <div class="brand">Your Summit · Engagement Hub</div>
+          <div class="title-l">Your moments are ready, Sarah.</div>
+          <div class="grid-m"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          <div class="cta-pill">Share to LinkedIn →</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="problem-grid">
+      <div class="p-card">
+        <div class="p-icon">
+          <svg width="64" height="48" viewBox="0 0 96 72" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="12" y="16" width="72" height="44" rx="3" fill="rgba(245,98,15,0.06)"/>
+            <path d="M12 19l36 22 36-22"/>
+            <circle cx="72" cy="22" r="10" fill="#F5620F" stroke="none"/>
+            <path d="M67 22l10 0M72 17l0 10" stroke="#fff" stroke-width="2.8"/>
+          </svg>
+        </div>
+        <h3>The gallery link that dies on delivery</h3>
+        <p>A bulk Dropbox link lands in busy inboxes, gets one scroll, and tells you nothing about who engaged.</p>
+      </div>
+
+      <div class="p-card">
+        <div class="p-icon">
+          <svg width="64" height="48" viewBox="0 0 96 72" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="14" y="12" width="68" height="48" rx="4" fill="rgba(245,98,15,0.06)"/>
+            <path d="M22 24h52M22 34h40M22 44h36"/>
+            <line x1="18" y1="58" x2="78" y2="14" stroke="#F5620F" stroke-width="3"/>
+          </svg>
+        </div>
+        <h3>Follow-ups that undersell the event</h3>
+        <p>"Thanks for attending" doesn't match the register of a premium Summit - or give senior audiences a reason to re-engage.</p>
+      </div>
+
+      <div class="p-card">
+        <div class="p-icon">
+          <svg width="64" height="48" viewBox="0 0 96 72" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 60V14M14 60h72"/>
+            <path d="M22 46l12 2 10-4 12 6 10-2 12-2" stroke="#F5620F" stroke-width="2.6"/>
+            <circle cx="22" cy="46" r="2.6" fill="#F5620F" stroke="none"/>
+            <circle cx="34" cy="48" r="2.6" fill="#F5620F" stroke="none"/>
+            <circle cx="44" cy="44" r="2.6" fill="#F5620F" stroke="none"/>
+            <circle cx="56" cy="50" r="2.6" fill="#F5620F" stroke="none"/>
+            <circle cx="66" cy="48" r="2.6" fill="#F5620F" stroke="none"/>
+            <circle cx="78" cy="46" r="2.6" fill="#F5620F" stroke="none"/>
+          </svg>
+        </div>
+        <h3>A post-event report that says "we posted the photos"</h3>
+        <p>When your CMO asks what the event drove, anecdotes aren't the answer. You need attendee-level data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ SECTION 4 · SOLUTION -->
+<section class="solution-section">
+  <div class="container">
+    <div class="solution-intro">
+      <span class="eyebrow">The solution</span>
+      <h2>A branded destination your audience returns to - not a gallery link they ignore.</h2>
+      <p>Kampfire replaces the generic gallery with a mobile-first Engagement Hub - a personalized destination for every attendee that delivers their photos, your event content, your CTAs, and your messaging, all in one place.</p>
+    </div>
+
+    <div class="solution-grid">
+      <ul class="feature-list">
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <h3>Find-me, not search</h3>
+            <p>One selfie. Every photo they're in. Plus host-curated favorites and the full gallery.</p>
+          </div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <h3>Captions that write themselves - in your voice</h3>
+            <p>Auto-generated from the photo, your narrative, and the brand or sponsor you want amplified.</p>
+          </div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <h3>A branded destination, not a folder</h3>
+            <p>Private URL, your event branding, open for as long as you need.</p>
+          </div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <h3>Every interaction is a measurable signal</h3>
+            <p>Per-attendee views, clicks, downloads, shares - by default.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="hub-showcase">
+        <img class="hub-img" src="Cais assets/engagement-hub-2.png" alt="The Kampfire Engagement Hub - a branded post-event destination with a selfie-upload entry to a personalized photo album" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ SECTION · INTERACTIVE CALCULATOR -->
+<section class="calc-section" id="calculator">
+  <div class="container">
+    <div class="calc-intro">
+      <span class="eyebrow">See your impact</span>
+      <h2>What could Kampfire do for your next event?</h2>
+      <p>Three inputs. Your numbers.</p>
+    </div>
+
+    <div class="calc-wrap">
+      <div class="calc-inputs">
+        <div class="calc-field">
+          <label for="calc-x">Expected attendees</label>
+          <div class="input-wrap">
+            <input id="calc-x" type="number" min="1" step="1" value="1000" inputmode="numeric" />
+            <span class="suffix">people</span>
+          </div>
+          <div class="hint">How many people you expect on-site.</div>
+        </div>
+
+        <div class="calc-field">
+          <label for="calc-y">Previous response rate</label>
+          <div class="input-wrap">
+            <input id="calc-y" type="number" min="0" max="100" step="0.5" value="20" inputmode="decimal" />
+            <span class="suffix">%</span>
+          </div>
+          <div class="hint">Post-event engagement rate at similar events.</div>
+        </div>
+
+        <div class="calc-field">
+          <label for="calc-z">Event cost</label>
+          <div class="input-wrap">
+            <span class="prefix">$</span>
+            <input id="calc-z" type="number" min="1" step="1000" value="200000" inputmode="numeric" />
+          </div>
+          <div class="hint">Total event budget.</div>
+        </div>
+      </div>
+
+      <div class="calc-outputs">
+        <div class="calc-head">
+          <div class="col metric-h">Metric</div>
+          <div class="col without-h">Without Kampfire</div>
+          <div class="col with-h">With Kampfire</div>
+        </div>
+
+        <div class="calc-row">
+          <div class="metric">Brand reach<span class="sub-m">Post-event amplification to outside networks</span></div>
+          <div class="calc-value" id="out-reach-without">—</div>
+          <div class="calc-value with-val" id="out-reach-with">—</div>
+        </div>
+
+        <div class="calc-row">
+          <div class="metric">Post-event response rate<span class="sub-m">Share of attendees who re-engage after the event</span></div>
+          <div class="calc-value" id="out-resp-without">—</div>
+          <div class="calc-value with-val" id="out-resp-with">—</div>
+        </div>
+
+        <div class="calc-row">
+          <div class="metric">Post-event pipeline value<span class="sub-m">Attributable value returning from the event</span></div>
+          <div class="calc-value" id="out-val-without">—</div>
+          <div class="calc-value with-val" id="out-val-with">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-cta-hint">
+      <div class="txt">See how these numbers apply to your actual event.</div>
+      <a href="#demo" class="btn btn--primary">Book a demo →</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    const fmtInt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
+    const fmtCur = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+
+    const xEl = document.getElementById('calc-x');
+    const yEl = document.getElementById('calc-y');
+    const zEl = document.getElementById('calc-z');
+
+    const reachWithoutEl = document.getElementById('out-reach-without');
+    const reachWithEl    = document.getElementById('out-reach-with');
+
+    const respWithoutEl = document.getElementById('out-resp-without');
+    const respWithEl    = document.getElementById('out-resp-with');
+
+    const valWithoutEl = document.getElementById('out-val-without');
+    const valWithEl    = document.getElementById('out-val-with');
+
+    function parseNum(el, fallback) {
+      const v = parseFloat(el.value);
+      return isNaN(v) || v < 0 ? fallback : v;
+    }
+
+    function compute() {
+      const x = parseNum(xEl, 0);
+      const y = parseNum(yEl, 0);
+      const z = parseNum(zEl, 0);
+
+      // Brand reach
+      const reachWithout = x * 0.10 * 35;
+      const reachWith    = x * 0.65 * 65;
+      reachWithoutEl.textContent = fmtInt.format(Math.round(reachWithout));
+      reachWithEl.textContent    = fmtInt.format(Math.round(reachWith));
+
+      // Response rate: lower between 2.5*Y or 90%
+      const respWithout = Math.min(Math.max(y, 0), 100);
+      const respWith    = Math.max(Math.min(2.5 * y, 90), 0);
+      respWithoutEl.textContent = respWithout.toFixed(respWithout % 1 === 0 ? 0 : 1) + '%';
+      respWithEl.textContent    = respWith.toFixed(respWith % 1 === 0 ? 0 : 1) + '%';
+
+      // Pipeline value: Y * 8% * Z for both columns (Y differs per side)
+      const valWithout = respWithout * 0.08 * z;
+      const valWith    = respWith * 0.08 * z;
+      valWithoutEl.textContent = fmtCur.format(Math.round(valWithout));
+      valWithEl.textContent    = fmtCur.format(Math.round(valWith));
+    }
+
+    [xEl, yEl, zEl].forEach(el => el.addEventListener('input', compute));
+    compute();
+  })();
+</script>
+
+<!-- ══════════════════════════════════════ SECTION 5 · HOW IT WORKS -->
+<section class="how-section">
+  <div class="container">
+    <div class="how-intro">
+      <span class="eyebrow">How it works</span>
+      <h2>Three steps from closing session to measurable re-engagement.</h2>
+      <p>Kampfire plugs into your existing event workflow. No new hardware, no new vendor briefs, no delayed turnaround. Your team stays focused on the live event; Kampfire handles the 72 hours after.</p>
+    </div>
+
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="step-topic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </div>
+        <div class="step-num"><span>01</span></div>
+        <h3>Connect</h3>
+        <p>Plugs into your existing event workflow. Photos flow in as they're captured.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-topic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="step-num"><span>02</span></div>
+        <h3>Personalize</h3>
+        <p>Face-matched photos, on-brand captions, your content and CTAs woven in.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-topic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+        </div>
+        <div class="step-num"><span>03</span></div>
+        <h3>Re-engage</h3>
+        <p>Every attendee gets their Hub. Your team sees every visit, click, and share.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ MID-PAGE CTA BAND -->
+<section class="mid-cta">
+  <div class="container mid-cta-inner">
+    <h3>Ready to see what this looks like for <em>your</em> event?</h3>
+    <a href="#demo" class="btn btn--primary">Book a demo →</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ SECTION 6 · WHY PREMIUM EVENTS -->
+<section class="why-section">
+  <div class="container">
+    <div class="why-intro">
+      <span class="eyebrow">Why premium events choose Kampfire</span>
+      <h2>Kampfire is built for events where the follow-through matters as much as the room.</h2>
+      <p>Four reasons premium event teams pick Kampfire over a gallery link or a generic follow-up email.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="num">01</div>
+        <div class="ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20L12 4 2 20z"/><circle cx="12" cy="10" r="1.6" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <h3>Built for premium, not mass.</h3>
+        <p>A Hub that looks like your event, not a photo-sharing app - because senior audiences read the register.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">02</div>
+        <div class="ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 11l3 3 5-6"/></svg>
+        </div>
+        <h3>Every share goes out on-message.</h3>
+        <p>Auto-captions combine the photo, your narrative, and the brand or sponsor you want amplified. On-message by default.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">03</div>
+        <div class="ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>A destination, not a one-time send.</h3>
+        <p>Not an email that's read once. A branded destination that keeps working for weeks.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">04</div>
+        <div class="ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h3>Boardroom-ready data, not just attendance.</h3>
+        <p>Per-attendee engagement, download, and share data - flowing to your CRM. Boardroom-ready by default.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ SECTION · CTA (CALENDAR EMBED) -->
+<section class="cta-section" id="demo">
+  <div class="container cta-inner">
+    <span class="eyebrow">Get started</span>
+    <h2>Pick a 20-minute window that works.</h2>
+    <p>We'll walk through how Kampfire fits your event workflow and what the numbers look like for an event like yours.</p>
+
+    <div class="cta-calendar">
+      <div class="cal-placeholder">
+        <div class="ic">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <strong>Calendly / Chili Piper embed goes here</strong>
+        <span>In production this section renders the scheduler directly, with the Kampfire brand styling applied.</span>
+      </div>
+    </div>
+
+    <div class="cta-secondary">
+      <a href="case-study-cais.html">Or read the full CAIS story first →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ FOOTER -->
+<footer>
+  <div class="container foot-inner">
+    <div class="foot-logo">
+      <img src="KampFire-logo-0300.png" alt="Kampfire" />
+    </div>
+    <div class="foot-tag">
+      Kampfire is the post-event engagement platform for premium events. <a href="https://www.kampfire.online/">kampfire.online</a>
+    </div>
+    <nav class="foot-links">
+      <a href="https://www.kampfire.online/">Home</a>
+      <a href="https://www.kampfire.online/#features">Features</a>
+      <a href="https://www.kampfire.online/#pricing">Pricing</a>
+      <a href="#demo">Book a demo</a>
+    </nav>
+    <div class="copy">© 2026 Kampfire. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

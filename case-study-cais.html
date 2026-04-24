@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>CAIS Group × Kampfire - Turning the Alternative Investment Summit into Measurable Engagement</title>
+  <meta name="description" content="How CAIS Group used Kampfire to extend post-event engagement, increase audience sharing, and measure the impact of event photos from the 2025 Alternative Investment Summit." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Brand palette - navy + flame orange */
+      --navy:               #0F1D3D;
+      --navy-mid:           #1C2F5C;
+      --navy-body:          #3D4C6E;
+      --navy-muted:         #8890A8;
+      --flame:              #F5620F;
+      --flame-deep:         #D94400;
+      --amber:              #FF9500;
+      --yellow:             #FFC93C;
+      --bg-white:           #FFFFFF;
+      --bg-warm:            #F5F7FB;
+      --bg-warmer:          #EEF1F7;
+      --bg-dark:            #0A1226;
+      --border:             #D8DEE8;
+      --border-dark:        rgba(255,255,255,0.10);
+
+      --font-display:       'Abril Fatface', serif;
+      --font-body:          'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius:             12px;
+      --radius-lg:          18px;
+      --shadow-sm:          0 2px 8px rgba(15,29,61,0.06);
+      --shadow-md:          0 8px 28px rgba(15,29,61,0.10);
+      --shadow-lg:          0 24px 60px rgba(15,29,61,0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--navy);
+      background: var(--bg-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    h1, h2, h3, h4 { line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; color: var(--navy); }
+    h1 { font-size: clamp(2.2rem, 4.8vw, 3.6rem); }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+    h3 { font-size: 1.2rem; }
+    p  { font-size: 1.05rem; color: var(--navy-body); }
+
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .container--narrow { max-width: 960px; }
+
+    .section { padding: 96px 0; }
+    .section--warm  { background: var(--bg-warm); }
+    .section--dark  { background: var(--bg-dark); color: rgba(255,255,255,0.85); }
+    .section--dark h1, .section--dark h2, .section--dark h3, .section--dark h4 { color: #fff; }
+    .section--dark p { color: rgba(255,255,255,0.70); }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--flame);
+      margin-bottom: 18px;
+    }
+    .section--dark .eyebrow { color: var(--amber); }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,18,38,0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
+    }
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 13px 26px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.12s ease, background 0.18s ease, box-shadow 0.2s ease;
+      font-family: var(--font-body);
+      letter-spacing: -0.01em;
+    }
+    .btn--primary { background: var(--flame); color: #fff; box-shadow: 0 8px 24px rgba(245,98,15,0.28); }
+    .btn--primary:hover { background: var(--flame-deep); transform: translateY(-1px); }
+    .btn--dark { background: var(--navy); color: #fff; }
+    .btn--dark:hover { background: var(--navy-mid); transform: translateY(-1px); }
+    .btn--ghost {
+      background: rgba(245,98,15,0.10);
+      color: var(--flame);
+      border: 1px solid rgba(245,98,15,0.25);
+    }
+    .btn--ghost:hover { background: rgba(245,98,15,0.18); }
+    .btn--white-outline {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.25);
+    }
+    .btn--white-outline:hover { border-color: #fff; background: rgba(255,255,255,0.05); }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(180deg, #0A1226 0%, #0F1D3D 100%);
+      color: #fff;
+      padding: 80px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -180px; right: -200px;
+      width: 720px; height: 720px;
+      background: radial-gradient(circle, rgba(245,98,15,0.22) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -140px; left: -120px;
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(255,149,0,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 64px;
+      align-items: end;
+    }
+    .hero-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 28px;
+      transition: color 0.15s;
+    }
+    .hero-back::before { content: '←'; }
+    .hero-back:hover { color: rgba(255,255,255,0.9); }
+
+    .hero h1 {
+      color: #fff;
+      margin-bottom: 22px;
+      max-width: 640px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--flame);
+    }
+    .hero-sub {
+      font-size: 1.18rem;
+      color: rgba(255,255,255,0.74);
+      line-height: 1.7;
+      max-width: 620px;
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 100px;
+    }
+    .tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--flame);
+    }
+
+    /* ── Snapshot card ── */
+    .snapshot {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      backdrop-filter: blur(8px);
+    }
+    .snapshot h4 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 22px;
+    }
+    .snapshot-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .snapshot-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .snapshot-row .key {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .snapshot-row .val {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      text-align: right;
+    }
+
+    /* ── Stage photo ── */
+    .stage-photo-wrap {
+      margin-top: -56px;
+      position: relative;
+      z-index: 3;
+    }
+    .stage-photo {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(0,0,0,0.04);
+      aspect-ratio: 16 / 8;
+      background: #0A1628;
+    }
+    .stage-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ── KPI strip ── */
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin-top: 56px;
+      border-radius: var(--radius-lg);
+      background: #fff;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .kpi-cell {
+      padding: 32px 28px;
+      border-right: 1px solid var(--border);
+    }
+    .kpi-cell:last-child { border-right: none; }
+    .kpi-cell .kpi-num {
+      font-size: clamp(2rem, 4.2vw, 2.8rem);
+      font-weight: 900;
+      color: var(--flame);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+    .kpi-cell .kpi-lbl {
+      font-size: 0.88rem;
+      color: var(--navy-body);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* ── Intro block ── */
+    .intro-block h2 { margin-bottom: 20px; }
+    .intro-block p { font-size: 1.12rem; line-height: 1.8; max-width: 760px; }
+
+    /* ── Two-col layout ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ── Challenge cards ── */
+    .challenges {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 40px;
+    }
+    .ch-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      position: relative;
+      transition: transform 0.18s ease, box-shadow 0.2s ease;
+    }
+    .ch-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .ch-card .ch-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(245,98,15,0.10);
+      color: var(--flame);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .ch-card h3 { font-size: 1.02rem; margin-bottom: 8px; color: var(--navy); }
+    .ch-card p { font-size: 0.93rem; color: var(--navy-body); line-height: 1.6; }
+
+    /* ── Solution hub showcase ── */
+    .solution-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      margin-top: 56px;
+    }
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 1rem;
+      line-height: 1.55;
+      color: var(--navy-body);
+    }
+    .feature-list li .check {
+      flex-shrink: 0;
+      width: 24px; height: 24px;
+      background: var(--flame);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      margin-top: 1px;
+    }
+    .feature-list li strong { color: var(--navy); }
+
+    /* ── Engagement hub (real render) ── */
+    .hub-img-wrap {
+      position: relative;
+      max-width: 420px;
+      margin: 0 auto;
+      padding-top: 14px;
+    }
+    .hub-img-wrap::before {
+      content: 'Engagement Hub - what attendees see';
+      position: absolute;
+      top: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--navy);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      white-space: nowrap;
+      z-index: 2;
+    }
+    .hub-img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(13,43,82,0.08);
+      display: block;
+    }
+
+    /* ── Big stat block ── */
+    .big-stat-block {
+      background: linear-gradient(135deg, #0F1D3D 0%, #1C2F5C 100%);
+      border-radius: var(--radius-lg);
+      padding: 56px 48px;
+      color: #fff;
+      margin-top: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .big-stat-block::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, rgba(245,98,15,0.25) 0%, transparent 65%);
+    }
+    .big-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 36px;
+      position: relative;
+      z-index: 1;
+    }
+    .big-stat-cell .num {
+      font-size: clamp(3rem, 6vw, 4.6rem);
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      line-height: 1;
+      color: var(--flame);
+      font-variant-numeric: tabular-nums;
+      margin-bottom: 12px;
+      background: linear-gradient(180deg, var(--yellow) 0%, var(--flame) 60%, var(--flame-deep) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .big-stat-cell .lbl {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.5;
+    }
+    .big-stat-cell .sub {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 6px;
+    }
+
+    /* ── Photo gallery ── */
+    .gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #0A1628;
+      box-shadow: var(--shadow-md);
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      aspect-ratio: 4 / 3;
+    }
+    .gallery-item.tall img { aspect-ratio: 4 / 5; }
+
+    /* ── Why Kampfire cards ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 48px;
+    }
+    .why-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      position: relative;
+      transition: transform 0.18s ease, box-shadow 0.2s ease;
+    }
+    .why-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(245,98,15,0.3);
+    }
+    .why-card .num {
+      position: absolute;
+      top: 20px; right: 22px;
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      color: var(--flame);
+      opacity: 0.18;
+      line-height: 1;
+    }
+    .why-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 10px;
+      color: var(--navy);
+      padding-right: 36px;
+    }
+    .why-card p {
+      font-size: 0.95rem;
+      color: var(--navy-body);
+      line-height: 1.6;
+    }
+
+    /* ── Pull quote ── */
+    .pull-quote {
+      background: var(--bg-warm);
+      border-left: 4px solid var(--flame);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 36px 40px;
+      margin: 48px 0 0;
+    }
+    .pull-quote p {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+      line-height: 1.45;
+      color: var(--navy);
+      font-weight: 400;
+    }
+
+    /* ── Before/After ── */
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .ba-card {
+      border-radius: var(--radius);
+      padding: 28px 26px;
+    }
+    .ba-card--before {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    .ba-card--after {
+      background: rgba(245,98,15,0.10);
+      border: 1px solid rgba(245,98,15,0.30);
+    }
+    .ba-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ba-card--before .ba-label { color: rgba(255,255,255,0.55); }
+    .ba-card--after .ba-label { color: var(--flame); }
+    .ba-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .ba-card li { font-size: 0.95rem; padding-left: 18px; position: relative; line-height: 1.55; }
+    .ba-card--before li { color: rgba(255,255,255,0.70); }
+    .ba-card--before li::before {
+      content: '-'; position: absolute; left: 0; color: rgba(255,255,255,0.35); font-weight: 700;
+    }
+    .ba-card--after li { color: rgba(255,255,255,0.92); }
+    .ba-card--after li::before {
+      content: '✓'; position: absolute; left: 0; color: var(--flame); font-weight: 700;
+    }
+
+    /* ── Closing CTA ── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--flame) 0%, var(--flame-deep) 100%);
+      border-radius: var(--radius-lg);
+      padding: 64px 56px;
+      color: #fff;
+      text-align: center;
+      margin: 0 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: -120px; left: 50%;
+      width: 500px; height: 500px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(255,201,60,0.35) 0%, transparent 70%);
+    }
+    .cta-banner h2 {
+      color: #fff;
+      font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-banner p {
+      color: rgba(255,255,255,0.88);
+      font-size: 1.08rem;
+      max-width: 560px;
+      margin: 0 auto 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-banner .cta-actions {
+      display: inline-flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-banner .btn--white {
+      background: #fff;
+      color: var(--flame);
+    }
+    .cta-banner .btn--white:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.14); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--bg-dark);
+      color: rgba(255,255,255,0.55);
+      padding: 56px 0 40px;
+      font-size: 0.88rem;
+    }
+    footer .foot-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    footer .foot-logo img {
+      height: 32px;
+      width: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1040px) {
+      .kpi-strip { grid-template-columns: repeat(3, 1fr); }
+      .kpi-cell { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+      .kpi-cell:nth-child(3n) { border-right: none; }
+      .kpi-cell:nth-last-child(-n+2) { border-bottom: none; }
+      .big-stat-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .solution-grid, .two-col { grid-template-columns: 1fr; gap: 40px; }
+      .before-after { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; }
+      .section { padding: 72px 0; }
+      .cta-banner { padding: 48px 28px; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .kpi-strip { grid-template-columns: 1fr 1fr; }
+      .kpi-cell { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+      .kpi-cell:nth-child(even) { border-right: none; }
+      .kpi-cell:nth-last-child(1):nth-child(odd) {
+        grid-column: 1 / -1;
+        border-right: none;
+      }
+      .kpi-cell:nth-last-child(-n+1) { border-bottom: none; }
+      .big-stat-grid { grid-template-columns: 1fr; gap: 28px; }
+      .big-stat-block { padding: 40px 28px; }
+      .pull-quote { padding: 28px 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════ -->
+<nav>
+  <div class="container nav-inner">
+    <a href="https://www.kampfire.online/" class="nav-logo" aria-label="Kampfire">
+      <img src="KampFire-logo-0300.png" alt="Kampfire" />
+    </a>
+    <div class="nav-links">
+      <a href="#challenge">Challenge</a>
+      <a href="#solution">Solution</a>
+      <a href="#results">Results</a>
+      <a href="#" class="btn btn--primary">Book a demo →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <a href="#" class="hero-back">Back to all customer stories</a>
+      <span class="eyebrow">Customer Story · CAIS Group</span>
+      <h1>Turning the Alternative Investment Summit into <em>measurable</em> post-event engagement.</h1>
+      <p class="hero-sub">
+        How CAIS Group used Kampfire to extend the energy of its Beverly Hills Summit past the closing session - giving 89 high-intent advisors a premium "find-me" moment, driving 502 downloads, and making sharing a natural extension of the event, not an afterthought.
+      </p>
+      <div class="hero-tags">
+        <span class="tag">Financial Services</span>
+        <span class="tag">Premium Summit</span>
+        <span class="tag">1,100+ Attendees</span>
+        <span class="tag">Oct 13-16, 2025</span>
+      </div>
+    </div>
+    <aside class="snapshot">
+      <h4>At a glance</h4>
+      <div class="snapshot-row">
+        <span class="key">Customer</span>
+        <span class="val">CAIS Group</span>
+      </div>
+      <div class="snapshot-row">
+        <span class="key">Event</span>
+        <span class="val">Alternative Investment Summit 2025</span>
+      </div>
+      <div class="snapshot-row">
+        <span class="key">Location</span>
+        <span class="val">Beverly Hills, CA</span>
+      </div>
+      <div class="snapshot-row">
+        <span class="key">Audience</span>
+        <span class="val">Independent advisors + asset managers</span>
+      </div>
+      <div class="snapshot-row">
+        <span class="key">Kampfire solution</span>
+        <span class="val">Personalized Engagement Hub</span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     STAGE PHOTO
+══════════════════════════════════════════════ -->
+<div class="container stage-photo-wrap">
+  <div class="stage-photo">
+    <img src="Cais assets/photo 2.jpg" alt="CAIS Summit 2025 main stage with keynote session underway in Beverly Hills" />
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     KPI STRIP + INTRO
+══════════════════════════════════════════════ -->
+<section class="section" style="padding-top: 64px;">
+  <div class="container">
+
+    <div class="kpi-strip" aria-label="Headline results">
+      <div class="kpi-cell">
+        <div class="kpi-num">1,015</div>
+        <div class="kpi-lbl">Engagement Hub visits</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-num">89</div>
+        <div class="kpi-lbl">Highly engaged guests</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-num">1,656</div>
+        <div class="kpi-lbl">Photo previews</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-num">502</div>
+        <div class="kpi-lbl">Photo downloads</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-num">49,560</div>
+        <div class="kpi-lbl">Social reach</div>
+      </div>
+    </div>
+
+    <div class="intro-block" style="margin-top: 72px;">
+      <span class="eyebrow">The context</span>
+      <h2>A premium audience expects a premium post-event.</h2>
+      <p style="margin-top: 18px;">
+        The CAIS Alternative Investment Summit brings together independent advisors and leading alternative asset managers for a high-touch, four-day gathering in Beverly Hills. The onsite energy is high. The conversations are real. But once the closing session ends, attendees head straight into flights, meetings, and inboxes - and the moment starts to fade.
+      </p>
+      <p style="margin-top: 12px;">
+        CAIS wanted a way to extend that energy past the ballroom doors - and, more importantly, to <strong style="color:var(--navy);">measure</strong> it.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     THE CHALLENGE
+══════════════════════════════════════════════ -->
+<section class="section section--warm" id="challenge">
+  <div class="container">
+    <span class="eyebrow">The Challenge</span>
+    <h2>The post-event gap: a folder full of photos nobody finds themselves in.</h2>
+    <p style="max-width: 780px; margin-top: 16px; font-size: 1.08rem;">
+      For a Summit of this caliber, the standard "download-the-gallery" approach wasn't going to cut it. CAIS needed to translate the premium onsite experience into something attendees would actually come back for - and something sponsors and stakeholders could see the value of.
+    </p>
+
+    <div class="challenges">
+
+      <div class="ch-card">
+        <div class="ch-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17V4a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v13"/><path d="M2 17h20"/><path d="M6 21l2-4h8l2 4"/></svg>
+        </div>
+        <h3>Photos scattered everywhere</h3>
+        <p>Event photography sat across folders, drives, and channels - no single destination attendees could be sent to.</p>
+      </div>
+
+      <div class="ch-card">
+        <div class="ch-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+        <h3>No fast way to "find me"</h3>
+        <p>Attendees wanted to spot their own highlights immediately - not scroll through a 1,000-photo gallery between flights.</p>
+      </div>
+
+      <div class="ch-card">
+        <div class="ch-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+        </div>
+        <h3>Sharing required friction</h3>
+        <p>A folder link is not a share format. Attendees needed photos that were ready to post - at the moment they felt the urge to post.</p>
+      </div>
+
+      <div class="ch-card">
+        <div class="ch-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Momentum evaporates fast</h3>
+        <p>The Summit energy was high onsite - but there was no simple, warm reason for guests to re-engage once they were back on the road.</p>
+      </div>
+
+      <div class="ch-card">
+        <div class="ch-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h3>Post-event value was invisible</h3>
+        <p>"We sent the photos" doesn't translate into numbers sponsors and executives trust. The team needed proof - not anecdotes.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     THE SOLUTION
+══════════════════════════════════════════════ -->
+<section class="section" id="solution">
+  <div class="container">
+    <span class="eyebrow">The Solution</span>
+    <h2 style="max-width: 820px;">A personalized Engagement Hub - built for a premium audience and ready to share.</h2>
+    <p style="max-width: 780px; margin-top: 16px; font-size: 1.08rem;">
+      CAIS activated Kampfire as the post-event photo experience for the Summit. Instead of a generic gallery link, every attendee received a branded destination where a single selfie surfaced their own moments instantly - and made each one ready to post, download, or share in one tap.
+    </p>
+
+    <div class="solution-grid">
+
+      <!-- Hub mockup #1 (selfie-first) - real render -->
+      <div class="hub-img-wrap">
+        <img class="hub-img" src="Cais assets/engagement-hub-1.png" alt="The Kampfire Engagement Hub delivered for the 2025 CAIS Summit - branded CAIS email with a selfie-upload CTA to find personalized photos" />
+      </div>
+
+      <!-- Feature list -->
+      <div>
+        <h3 style="font-size: 1.35rem; margin-bottom: 18px;">What attendees could do - in one tap.</h3>
+        <p style="color: var(--navy-body); font-size: 1rem;">
+          No scrolling. No signup friction. No "wait for the gallery." Just a selfie, a personal album, and a share button.
+        </p>
+        <ul class="feature-list">
+          <li><span class="check">✓</span><div><strong>Find themselves instantly.</strong> Facial-recognition matching returned every photo they appeared in - in seconds.</div></li>
+          <li><span class="check">✓</span><div><strong>Download and share seamlessly.</strong> One-tap downloads and native share sheets, pre-formatted for social.</div></li>
+          <li><span class="check">✓</span><div><strong>Relive the Summit days later.</strong> A branded destination attendees came back to after they'd landed, unpacked, and checked in with colleagues.</div></li>
+          <li><span class="check">✓</span><div><strong>Put CAIS in their sphere of influence.</strong> Every share surfaced the Summit brand to the advisor and asset-manager networks that matter.</div></li>
+          <li><span class="check">✓</span><div><strong>A premium experience - not a folder.</strong> Fully branded, mobile-first, and designed for the sophistication of the audience.</div></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pull-quote">
+      <p>"The post-event experience became an easy reason to share. Event moments became post-event momentum."</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     RESULTS - BIG STATS
+══════════════════════════════════════════════ -->
+<section class="section section--dark" id="results">
+  <div class="container">
+    <span class="eyebrow">The Results</span>
+    <h2 style="max-width: 820px;">Measurable post-event engagement - at the scale of a premium Summit.</h2>
+    <p style="max-width: 720px; margin-top: 14px;">
+      Within days of the closing session, the Hub was driving repeat visits, thousands of photo previews, and hundreds of attendee-initiated downloads - a clear signal that the audience came back, engaged, and shared on their own terms.
+    </p>
+
+    <div class="big-stat-block">
+      <div class="big-stat-grid">
+        <div class="big-stat-cell">
+          <div class="num">1,015</div>
+          <div class="lbl">Engagement Hub visits</div>
+          <div class="sub">Attendees returning to relive the Summit</div>
+        </div>
+        <div class="big-stat-cell">
+          <div class="num">1,656</div>
+          <div class="lbl">Photo previews</div>
+          <div class="sub">Individual moments viewed by name</div>
+        </div>
+        <div class="big-stat-cell">
+          <div class="num">502</div>
+          <div class="lbl">Photo downloads</div>
+          <div class="sub">Photos attendees kept</div>
+        </div>
+        <div class="big-stat-cell">
+          <div class="num">49,560</div>
+          <div class="lbl">Social reach</div>
+          <div class="sub">Amplified Summit reach across attendee networks</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="before-after">
+      <div class="ba-card ba-card--before">
+        <div class="ba-label">Before Kampfire</div>
+        <ul>
+          <li>A static gallery link sent after the event</li>
+          <li>Most attendees never opened it</li>
+          <li>No visibility into who engaged or downloaded</li>
+          <li>Sharing depended on individuals doing the work</li>
+          <li>"We posted the photos" was the only report available</li>
+        </ul>
+      </div>
+      <div class="ba-card ba-card--after">
+        <div class="ba-label">With Kampfire</div>
+        <ul>
+          <li>A branded Engagement Hub built around each attendee</li>
+          <li>1,015 visits + 89 highly engaged guests</li>
+          <li>Per-attendee engagement and download data</li>
+          <li>Sharing designed into the flow, not asked for later</li>
+          <li>Dashboards that speak both event and marketing languages</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECOND HUB (gallery variant)
+══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="solution-grid" style="margin-top: 0;">
+
+      <!-- Hub mockup #2 (gallery variant) - real render -->
+      <div class="hub-img-wrap">
+        <img class="hub-img" src="Cais assets/engagement-hub-2.png" alt="The post-event CAIS Engagement Hub showing a live gallery strip of Summit highlights plus the selfie-upload entry point to a personalized album" />
+      </div>
+
+      <div>
+        <span class="eyebrow">Built for the way attendees actually behave</span>
+        <h3 style="font-size: 1.6rem; margin-bottom: 18px; line-height: 1.2;">The Hub grows with the event.</h3>
+        <p style="color: var(--navy-body); font-size: 1.02rem; line-height: 1.75;">
+          During the Summit, the Hub surfaced live highlights the moment they were shot - so attendees could find themselves while the energy was still high. After the event, it expanded into the full gallery, keeping the same selfie-powered "find me" experience that made it easy in the first place.
+        </p>
+        <p style="color: var(--navy-body); font-size: 1.02rem; line-height: 1.75; margin-top: 14px;">
+          The result: one destination, two behaviors - immediate onsite capture and days-later rediscovery.
+        </p>
+
+        <div style="display: flex; gap: 32px; margin-top: 32px; flex-wrap: wrap;">
+          <div>
+            <div style="font-family: var(--font-display); font-size: 3rem; color: var(--flame); line-height: 1;">1.6×</div>
+            <div style="font-size: 0.88rem; color: var(--navy-muted); margin-top: 4px;">previews per visitor</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-display); font-size: 3rem; color: var(--flame); line-height: 1;">49%</div>
+            <div style="font-size: 0.88rem; color: var(--navy-muted); margin-top: 4px;">download-per-visit rate</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     EVENT PHOTO GALLERY
+══════════════════════════════════════════════ -->
+<section class="section section--warm">
+  <div class="container">
+    <span class="eyebrow">Onsite</span>
+    <h2>Inside the Summit.</h2>
+    <p style="max-width: 720px; margin-top: 14px;">A few of the moments Kampfire surfaced back to attendees - automatically matched to their faces, packaged to share.</p>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="Cais assets/photo 2.jpg" alt="CAIS Summit main ballroom filled with attendees watching the keynote" />
+      </div>
+      <div class="gallery-item tall">
+        <img src="Cais assets/photo 1.jpg" alt="CAIS Summit fireside chat on the main stage in Beverly Hills" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     WHY KAMPFIRE WORKED
+══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <span class="eyebrow">Why it worked</span>
+    <h2 style="max-width: 820px;">Why Kampfire works for a Summit like CAIS.</h2>
+    <p style="max-width: 720px; margin-top: 14px; font-size: 1.05rem;">
+      The same five reasons keep coming up when premium event owners adopt Kampfire. CAIS saw all of them.
+    </p>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+        <div class="num">01</div>
+        <h3>A premium audience expects a premium experience</h3>
+        <p>Instead of a generic gallery link, advisors and asset managers got a clean, branded flow that felt like a continuation of the Summit itself.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="num">02</div>
+        <h3>The "find me" moment is what drives action</h3>
+        <p>When guests instantly see their own photos, they stay longer, download more, and come back after the event. Every other pattern is a distant second.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="num">03</div>
+        <h3>Built for amplification, not just delivery</h3>
+        <p>Kampfire turns photos into ready-to-share assets - so sharing happens naturally, without constant reminders from the marketing team.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="num">04</div>
+        <h3>Proof replaces guesswork</h3>
+        <p>CAIS could move beyond "we posted the photos" and show real engagement, downloads, and sharing behavior - all in one place.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="num">05</div>
+        <h3>ROI the whole room can read</h3>
+        <p>Simple dashboards and reports that speak both event and marketing languages - so event leads and CMOs see value in the same numbers.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CLOSING STATEMENT
+══════════════════════════════════════════════ -->
+<section class="section" style="padding-top: 0;">
+  <div class="container container--narrow" style="text-align: center;">
+    <h2 style="font-family: var(--font-display); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.25; color: var(--navy);">
+      Turning the CAIS Alternative Investment Summit into measurable, sustained engagement - one attendee, one photo, one share at a time.
+    </h2>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CTA BANNER
+══════════════════════════════════════════════ -->
+<section style="padding-bottom: 96px;">
+  <div class="cta-banner">
+    <h2>Ready to turn your next event into pipeline?</h2>
+    <p>See how Kampfire can give your attendees a personalized Engagement Hub - and give your team the numbers to prove it worked.</p>
+    <div class="cta-actions">
+      <a href="https://www.kampfire.online/" class="btn btn--white">Book a demo →</a>
+      <a href="#" class="btn btn--white-outline" style="color:#fff; border-color: rgba(255,255,255,0.45);">See more customer stories</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer>
+  <div class="container foot-inner">
+    <div class="foot-logo"><img src="KampFire-logo-0300.png" alt="Kampfire" /></div>
+    <div>Kampfire transforms event photos into personalized engagement moments. <a href="https://www.kampfire.online/" style="color: var(--flame); text-decoration: underline;">kampfire.online</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
