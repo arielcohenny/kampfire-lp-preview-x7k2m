@@ -271,7 +271,7 @@
     }
     .kpi-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 32px;
     }
     .kpi-cell {
@@ -336,7 +336,7 @@
       align-items: stretch;
       gap: 28px;
       max-width: 1100px;
-      margin: 0 auto 72px;
+      margin: 80px auto 72px;
     }
     .compare-card {
       background: #fff;
@@ -481,18 +481,49 @@
       font-weight: 800;
       margin-bottom: 3px;
     }
+    .after-metrics {
+      width: 100%;
+      background: rgba(245, 98, 15, 0.06);
+      border: 1px dashed var(--flame);
+      border-radius: 8px;
+      padding: 14px 12px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: auto;
+    }
+    .after-metrics .m {
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--navy-muted);
+      line-height: 1.3;
+      border-right: 1px solid var(--flame);
+      padding: 0 6px;
+    }
+    .after-metrics .m:last-child { border-right: none; }
+    .after-metrics .m strong {
+      display: block;
+      color: var(--flame);
+      font-size: 0.86rem;
+      font-weight: 800;
+      margin-bottom: 3px;
+    }
 
     /* After: phone-frame illustration (no background fill) */
     .compare-after-mock {
       background: transparent;
       border-radius: 8px;
-      padding: 30px 12px 30px;
+      padding: 16px 12px 16px;
       min-height: 460px;
       position: relative;
       overflow: visible;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      gap: 22px;
+    }
+    .compare-after-mock .phone-host {
+      margin: auto 0 0;
     }
 
     /* Phone host (sized to scaled phone) */
@@ -540,16 +571,13 @@
     .hub-scroll {
       width: 100%;
       will-change: transform;
-      animation: hubScrollLoop 28s ease-in-out infinite;
+      animation: hubScrollLoop 14s ease-in-out infinite;
     }
     @keyframes hubScrollLoop {
-      0%, 6%   { transform: translateY(0); }
-      12%, 22% { transform: translateY(-150px); }
-      28%, 38% { transform: translateY(-300px); }
-      44%, 54% { transform: translateY(-500px); }
-      60%, 70% { transform: translateY(-620px); }
-      76%, 86% { transform: translateY(-660px); }
-      100%     { transform: translateY(0); }
+      0%, 15%   { transform: translateY(0); }
+      25%, 45%  { transform: translateY(-180px); }
+      55%, 85%  { transform: translateY(-380px); }
+      100%      { transform: translateY(0); }
     }
 
     .hub-spacer { height: 32px; background: #EBF1FA; }
@@ -618,6 +646,7 @@
     .hub-found-msg .label { color: #0B2447; font-weight: 800; font-size: 0.84rem; }
     .hub-gallery { background: #EBF1FA; padding: 8px 14px 18px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
     .hub-gallery svg { width: 100%; height: auto; display: block; border-radius: 5px; }
+    .hub-gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border-radius: 5px; }
     .hub-survey-band { padding: 6px 16px 16px; background: #EBF1FA; }
     .hub-survey-cta {
       display: block; text-align: center;
@@ -667,36 +696,21 @@
       background: linear-gradient(135deg, var(--flame), var(--yellow));
       box-shadow: 0 0 10px rgba(245,98,15,0.6);
     }
-    .float-bit.cta     { top: 84px;  left: 215px;  animation: popCTA 28s ease-in-out infinite; }
-    .float-bit.selfie  { top: 175px; right: 215px; animation: popSelfie 28s ease-in-out infinite; }
-    .float-bit.gallery { top: 265px; left: 215px;  animation: popGallery 28s ease-in-out infinite; }
-    .float-bit.survey  { top: 355px; right: 215px; animation: popSurvey 28s ease-in-out infinite; }
-    .float-bit.social  { top: 430px; left: 215px;  animation: popSocial 28s ease-in-out infinite; }
+    .float-bit.cta     { top: 84px;  left: 215px;  animation: popLeft  12s ease-in-out infinite; animation-delay: 0s;   }
+    .float-bit.selfie  { top: 175px; right: 215px; animation: popRight 12s ease-in-out infinite; animation-delay: 2.4s; }
+    .float-bit.gallery { top: 265px; left: 215px;  animation: popLeft  12s ease-in-out infinite; animation-delay: 4.8s; }
+    .float-bit.survey  { top: 355px; right: 215px; animation: popRight 12s ease-in-out infinite; animation-delay: 7.2s; }
+    .float-bit.social  { top: 430px; left: 215px;  animation: popLeft  12s ease-in-out infinite; animation-delay: 9.6s; }
 
-    @keyframes popCTA {
-      0%, 8%    { opacity: 0; transform: translateX(12px); }
-      14%, 22%  { opacity: 1; transform: translateX(0); }
-      26%, 100% { opacity: 0; transform: translateX(12px); }
+    @keyframes popLeft {
+      0%        { opacity: 0; transform: translateX(12px); }
+      8%, 32%   { opacity: 1; transform: translateX(0); }
+      40%, 100% { opacity: 0; transform: translateX(12px); }
     }
-    @keyframes popSelfie {
-      0%, 24%   { opacity: 0; transform: translateX(-12px); }
-      30%, 38%  { opacity: 1; transform: translateX(0); }
-      42%, 100% { opacity: 0; transform: translateX(-12px); }
-    }
-    @keyframes popGallery {
-      0%, 40%   { opacity: 0; transform: translateX(12px); }
-      46%, 54%  { opacity: 1; transform: translateX(0); }
-      58%, 100% { opacity: 0; transform: translateX(12px); }
-    }
-    @keyframes popSurvey {
-      0%, 56%   { opacity: 0; transform: translateX(-12px); }
-      62%, 70%  { opacity: 1; transform: translateX(0); }
-      74%, 100% { opacity: 0; transform: translateX(-12px); }
-    }
-    @keyframes popSocial {
-      0%, 72%   { opacity: 0; transform: translateX(12px); }
-      78%, 86%  { opacity: 1; transform: translateX(0); }
-      90%, 100% { opacity: 0; transform: translateX(12px); }
+    @keyframes popRight {
+      0%        { opacity: 0; transform: translateX(-12px); }
+      8%, 32%   { opacity: 1; transform: translateX(0); }
+      40%, 100% { opacity: 0; transform: translateX(-12px); }
     }
 
     .compare-arrow {
@@ -769,6 +783,34 @@
       color: var(--navy-body);
       line-height: 1.55;
     }
+    .problem-bridge {
+      margin: 96px auto 0;
+      max-width: 880px;
+      text-align: center;
+    }
+    .problem-bridge p {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-style: italic;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+    .problem-bridge .accent {
+      color: var(--flame);
+    }
+    .bridge-arrow {
+      margin-top: 36px;
+      display: flex;
+      justify-content: center;
+      color: var(--flame);
+      animation: bridgeBounce 1.8s ease-in-out infinite;
+    }
+    @keyframes bridgeBounce {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(10px); }
+    }
 
     /* ── Section 4 · Solution ── */
     .solution-section {
@@ -793,9 +835,11 @@
     }
     .feature-list {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 26px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
     .feature-list li {
       display: flex;
@@ -1524,9 +1568,8 @@
     @media (max-width: 900px) {
       .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 20px; }
       .kpi-cell:not(:last-child)::after { display: none; }
-      .kpi-cell:nth-child(5) { grid-column: 1 / -1; }
       .problem-grid { grid-template-columns: 1fr; }
-      .solution-grid { grid-template-columns: 1fr; gap: 48px; }
+      .feature-list { grid-template-columns: 1fr; gap: 26px; }
       .how-grid { grid-template-columns: 1fr; gap: 56px; }
       .how-grid::before { display: none; }
       .why-grid { grid-template-columns: 1fr; }
@@ -1553,9 +1596,9 @@
   <div class="container hero-inner">
     <div class="hero-content">
       <span class="eyebrow">For premium events and flagship gatherings</span>
-      <h1>Your Summit ended Friday. By Monday, <span class="flame-text">your $2M audience is gone.</span></h1>
+      <h1>You put on a five-star event. <span class="flame-text">Then send a canned email everyone ignores.</span></h1>
       <p class="hero-sub">
-        The post-event engagement platform that brings your audience back on their own - measurably.
+        Kampfire turns post-event silence into engagement. Then turns engagement into numbers.
       </p>
       <div class="hero-actions">
         <a href="#demo" class="btn btn--primary">Book a demo →</a>
@@ -1598,17 +1641,10 @@
       </div>
       <div class="kpi-cell">
         <div class="kpi-ic">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2L12 3z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
         </div>
-        <div class="kpi-num">1,656</div>
-        <div class="kpi-lbl">Photo previews</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kpi-ic">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        </div>
-        <div class="kpi-num">502</div>
-        <div class="kpi-lbl">Photo downloads</div>
+        <div class="kpi-num">2,158</div>
+        <div class="kpi-lbl">Personal moments delivered</div>
       </div>
       <div class="kpi-cell">
         <div class="kpi-ic">
@@ -1628,8 +1664,95 @@
   <div class="container">
     <div class="problem-intro">
       <span class="eyebrow">The problem</span>
-      <h2>Your event already worked. The follow-up is where it fails.</h2>
+      <h2>The follow-up is where the investment leaks out.</h2>
+      <p>Premium events spend millions to get the right people into one room. Then they hand the week after to the same playbook every event uses — generic email, gallery link, hope. The room delivered. The week after didn't.</p>
     </div>
+
+    <div class="problem-grid">
+      <div class="p-card">
+        <div class="p-icon">
+          <svg width="64" height="48" viewBox="0 0 96 72" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="14" y="12" width="68" height="48" rx="4" fill="rgba(245,98,15,0.06)"/>
+            <path d="M22 24h52M22 34h40M22 44h36"/>
+            <line x1="18" y1="58" x2="78" y2="14" stroke="#F5620F" stroke-width="3"/>
+          </svg>
+        </div>
+        <h3>Generic content. Unopened email.</h3>
+        <p>Recaps, thank-yous, vendor lists, agendas—there's nothing in a generic post-event email that gives guests a reason to engage. So it goes unopened. And when it is opened, it's ignored.</p>
+      </div>
+
+      <div class="p-card">
+        <div class="p-icon">
+          <svg width="64" height="48" viewBox="0 0 96 72" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="12" y="16" width="72" height="44" rx="3" fill="rgba(245,98,15,0.06)"/>
+            <path d="M12 19l36 22 36-22"/>
+            <circle cx="72" cy="22" r="10" fill="#F5620F" stroke="none"/>
+            <path d="M67 22l10 0M72 17l0 10" stroke="#fff" stroke-width="2.8"/>
+          </svg>
+        </div>
+        <h3>The gallery link that dies on delivery</h3>
+        <p>A single bulk gallery link, sent to every attendee. They have to find themselves in thousands of photos — most don't bother. Even if they do, you have no idea who engaged, no way to bring them back.</p>
+      </div>
+
+      <div class="p-card">
+        <div class="p-icon">
+          <svg width="64" height="48" viewBox="0 0 96 72" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 60V14M14 60h72"/>
+            <path d="M22 46l12 2 10-4 12 6 10-2 12-2" stroke="#F5620F" stroke-width="2.6"/>
+            <circle cx="22" cy="46" r="2.6" fill="#F5620F" stroke="none"/>
+            <circle cx="34" cy="48" r="2.6" fill="#F5620F" stroke="none"/>
+            <circle cx="44" cy="44" r="2.6" fill="#F5620F" stroke="none"/>
+            <circle cx="56" cy="50" r="2.6" fill="#F5620F" stroke="none"/>
+            <circle cx="66" cy="48" r="2.6" fill="#F5620F" stroke="none"/>
+            <circle cx="78" cy="46" r="2.6" fill="#F5620F" stroke="none"/>
+          </svg>
+        </div>
+        <h3>A post-event report that says "we posted the photos"</h3>
+        <p>When your CMO asks what the event drove, anecdotes aren't the answer. You need attendee-level data on who did what. Names, not narratives. Without it, the next sponsor pitch and budget defense both rest on goodwill.</p>
+      </div>
+    </div>
+
+    <div class="problem-bridge">
+      <p>If the standard playbook delivers neither engagement nor proof — <span class="accent">what does?</span></p>
+      <div class="bridge-arrow">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ SECTION 4 · SOLUTION -->
+<section class="solution-section">
+  <div class="container">
+    <div class="solution-intro">
+      <span class="eyebrow">The unlock</span>
+      <h2>Photos are the hook. Not the hero.</h2>
+      <p>The fix isn't a better email. It's a better hook. Every guest has the same <em>I want to see what I looked like</em> moment — they always click for their personal photos, delivered directly. No gallery to scroll, no faces to search. That click opens a <strong>measured</strong> engagement channel: sponsors, CTAs, surveys, next-year registration.</p>
+    </div>
+
+    <ul class="feature-list">
+      <li>
+        <span class="check">✓</span>
+        <div>
+          <h3>Find-me, not search</h3>
+          <p>One selfie. Every photo they're in. Plus host-curated favorites and the full gallery.</p>
+        </div>
+      </li>
+      <li>
+        <span class="check">✓</span>
+        <div>
+          <h3>Captions that write themselves - in your voice</h3>
+          <p>Auto-generated from the photo, your narrative, and the brand or sponsor you want amplified.</p>
+        </div>
+      </li>
+      <li>
+        <span class="check">✓</span>
+        <div>
+          <h3>Every interaction is a measurable signal</h3>
+          <p>Per-attendee views, clicks, downloads, shares - by default.</p>
+        </div>
+      </li>
+    </ul>
 
     <div class="compare">
       <div class="compare-card before">
@@ -1769,59 +1892,22 @@
                       <a class="hub-cta" href="#">Register to 2026 Summit</a>
                     </div>
 
-                    <!-- Selfie section -->
-                    <div class="hub-selfie-section">
-                      <h4>Upload a selfie to find photos that you're in</h4>
-                      <div class="small-grid">
-                        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-                          <rect width="60" height="60" rx="4" fill="#1F4068"/>
-                          <circle cx="20" cy="22" r="5" fill="#FFC993"/>
-                          <path d="M14 30 Q14 26 20 26 Q26 26 26 30 L26 50 L14 50 Z" fill="#FFC993"/>
-                          <circle cx="32" cy="20" r="5" fill="#F5620F"/>
-                          <path d="M26 28 Q26 24 32 24 Q38 24 38 28 L38 50 L26 50 Z" fill="#F5620F"/>
-                          <circle cx="44" cy="22" r="5" fill="#FFC993"/>
-                          <path d="M38 30 Q38 26 44 26 Q50 26 50 30 L50 50 L38 50 Z" fill="#FFC993"/>
-                        </svg>
-                        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-                          <rect width="60" height="60" rx="4" fill="#0B2447"/>
-                          <ellipse cx="30" cy="42" rx="20" ry="7" fill="#FFC993"/>
-                          <circle cx="14" cy="30" r="4" fill="#FFC993"/>
-                          <circle cx="46" cy="30" r="4" fill="#FFC993"/>
-                          <circle cx="22" cy="20" r="4" fill="#F5620F"/>
-                          <circle cx="38" cy="20" r="4" fill="#F5620F"/>
-                        </svg>
-                        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-                          <rect width="60" height="60" rx="4" fill="#1F4068"/>
-                          <circle cx="18" cy="20" r="5" fill="#FFC993"/>
-                          <path d="M12 26 Q12 23 18 23 Q24 23 24 26 L24 50 L12 50 Z" fill="#F5620F"/>
-                          <circle cx="42" cy="20" r="5" fill="#FFC993"/>
-                          <path d="M36 26 Q36 23 42 23 Q48 23 48 26 L48 50 L36 50 Z" fill="#FFC993"/>
-                          <path d="M24 30 L30 36 L36 30" stroke="#FFC93C" stroke-width="2" fill="none"/>
-                          <ellipse cx="30" cy="36" rx="4" ry="1.5" fill="#FFC93C"/>
-                        </svg>
-                      </div>
-                      <div class="hub-selfie-card">
-                        <div class="face"><div class="smile"></div></div>
-                        <p>Upload your selfie<br/>to find your photos</p>
-                      </div>
-                    </div>
-
                     <!-- "We found you" message -->
                     <div class="hub-found-msg">
-                      <div class="label">We found you in 9 photos!</div>
+                      <div class="label">You appear in 9 photos!</div>
                     </div>
 
                     <!-- Gallery (people in every photo) -->
                     <div class="hub-gallery">
-                      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="4" fill="#1F4068"/><circle cx="20" cy="22" r="5" fill="#FFC993"/><path d="M14 30 Q14 26 20 26 Q26 26 26 30 L26 50 L14 50 Z" fill="#FFC993"/><circle cx="32" cy="20" r="5" fill="#F5620F"/><path d="M26 28 Q26 24 32 24 Q38 24 38 28 L38 50 L26 50 Z" fill="#F5620F"/><circle cx="44" cy="22" r="5" fill="#FFC993"/><path d="M38 30 Q38 26 44 26 Q50 26 50 30 L50 50 L38 50 Z" fill="#FFC993"/></svg>
-                      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="4" fill="#0B2447"/><rect x="10" y="44" width="40" height="14" fill="#3D4C6E"/><rect x="22" y="34" width="16" height="14" fill="#FFC993"/><circle cx="30" cy="22" r="5" fill="#FFC993"/><path d="M24 28 Q24 25 30 25 Q36 25 36 28 L36 38 L24 38 Z" fill="#F5620F"/><path d="M20 18 L24 8 M40 18 L36 8" stroke="#FFC93C" stroke-width="1" opacity="0.5"/></svg>
-                      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="4" fill="#1F4068"/><ellipse cx="30" cy="42" rx="20" ry="7" fill="#FFC993"/><circle cx="14" cy="30" r="4" fill="#FFC993"/><circle cx="46" cy="30" r="4" fill="#FFC993"/><circle cx="22" cy="20" r="4" fill="#F5620F"/><circle cx="38" cy="20" r="4" fill="#F5620F"/></svg>
-                      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="4" fill="#0B2447"/><circle cx="18" cy="20" r="5" fill="#FFC993"/><path d="M12 26 Q12 23 18 23 Q24 23 24 26 L24 50 L12 50 Z" fill="#F5620F"/><circle cx="42" cy="20" r="5" fill="#FFC993"/><path d="M36 26 Q36 23 42 23 Q48 23 48 26 L48 50 L36 50 Z" fill="#FFC993"/><path d="M24 30 L30 36 L36 30" stroke="#FFC93C" stroke-width="2" fill="none"/><ellipse cx="30" cy="36" rx="4" ry="1.5" fill="#FFC93C"/></svg>
-                      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="4" fill="#1F4068"/><ellipse cx="30" cy="42" rx="22" ry="6" fill="#FFC993"/><ellipse cx="30" cy="40" rx="20" ry="5" fill="#fff" opacity="0.4"/><circle cx="20" cy="40" r="3" fill="#fff"/><circle cx="40" cy="40" r="3" fill="#fff"/><circle cx="14" cy="22" r="4" fill="#FFC993"/><circle cx="46" cy="22" r="4" fill="#F5620F"/></svg>
-                      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="4" fill="#0B2447"/><circle cx="28" cy="22" r="6" fill="#FFC993"/><path d="M20 30 Q20 26 28 26 Q36 26 36 30 L36 56 L20 56 Z" fill="#F5620F"/><rect x="38" y="20" width="3" height="10" rx="1.5" fill="#FFC93C"/><line x1="39.5" y1="30" x2="39.5" y2="38" stroke="#FFC993" stroke-width="1"/></svg>
-                      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="4" fill="#1F4068"/><rect x="14" y="14" width="32" height="6" rx="1" fill="#F5620F"/><circle cx="14" cy="32" r="4" fill="#FFC993"/><circle cx="30" cy="32" r="4" fill="#FFC993"/><circle cx="46" cy="32" r="4" fill="#FFC993"/><rect x="6" y="40" width="48" height="8" rx="2" fill="#3D4C6E"/><rect x="4" y="50" width="52" height="6" rx="2" fill="#3D4C6E" opacity="0.6"/></svg>
-                      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="4" fill="#0B2447"/><circle cx="18" cy="20" r="5" fill="#FFC993"/><path d="M12 26 Q12 23 18 23 Q24 23 24 26 L24 50 L12 50 Z" fill="#FFC993"/><circle cx="42" cy="20" r="5" fill="#FFC993"/><path d="M36 26 Q36 23 42 23 Q48 23 48 26 L48 50 L36 50 Z" fill="#F5620F"/><rect x="14" y="34" width="6" height="6" rx="1" fill="#fff"/><rect x="40" y="34" width="6" height="6" rx="1" fill="#fff"/></svg>
-                      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="4" fill="#1F4068"/><circle cx="14" cy="22" r="6" fill="#FFC993"/><path d="M6 30 Q6 27 14 27 Q22 27 22 30 L22 56 L6 56 Z" fill="#F5620F"/><circle cx="30" cy="18" r="6" fill="#FFC993"/><path d="M22 26 Q22 23 30 23 Q38 23 38 26 L38 56 L22 56 Z" fill="#FFC993"/><circle cx="46" cy="22" r="6" fill="#FFC993"/><path d="M38 30 Q38 27 46 27 Q54 27 54 30 L54 56 L38 56 Z" fill="#F5620F"/></svg>
+                      <img src="gallery/IMG_20260426_191237.png" alt="Event photo" />
+                      <img src="gallery/IMG_20260426_191259.png" alt="Event photo" />
+                      <img src="gallery/IMG_20260426_191318.png" alt="Event photo" />
+                      <img src="gallery/IMG_20260426_191352.png" alt="Event photo" />
+                      <img src="gallery/IMG_20260426_191412.png" alt="Event photo" />
+                      <img src="gallery/IMG_20260426_191433.png" alt="Event photo" />
+                      <img src="gallery/IMG_20260426_191456.png" alt="Event photo" />
+                      <img src="gallery/IMG_20260426_191521.png" alt="Event photo" />
+                      <img src="gallery/IMG_20260426_191539.png" alt="Event photo" />
                     </div>
 
                     <!-- Survey CTA -->
@@ -1848,101 +1934,17 @@
               </div>
             </div>
           </div>
+          <div class="after-metrics">
+            <div class="m"><strong>76%</strong>response rate</div>
+            <div class="m"><strong>1,015</strong>Hub visits</div>
+            <div class="m"><strong>89</strong>highly engaged</div>
+            <div class="m"><strong>2,158</strong>moments delivered</div>
+            <div class="m"><strong>12×</strong>content views</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="problem-grid">
-      <div class="p-card">
-        <div class="p-icon">
-          <svg width="64" height="48" viewBox="0 0 96 72" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="12" y="16" width="72" height="44" rx="3" fill="rgba(245,98,15,0.06)"/>
-            <path d="M12 19l36 22 36-22"/>
-            <circle cx="72" cy="22" r="10" fill="#F5620F" stroke="none"/>
-            <path d="M67 22l10 0M72 17l0 10" stroke="#fff" stroke-width="2.8"/>
-          </svg>
-        </div>
-        <h3>The gallery link that dies on delivery</h3>
-        <p>A bulk Dropbox link lands in busy inboxes, gets one scroll, and tells you nothing about who engaged.</p>
-      </div>
-
-      <div class="p-card">
-        <div class="p-icon">
-          <svg width="64" height="48" viewBox="0 0 96 72" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="14" y="12" width="68" height="48" rx="4" fill="rgba(245,98,15,0.06)"/>
-            <path d="M22 24h52M22 34h40M22 44h36"/>
-            <line x1="18" y1="58" x2="78" y2="14" stroke="#F5620F" stroke-width="3"/>
-          </svg>
-        </div>
-        <h3>Follow-ups that undersell the event</h3>
-        <p>"Thanks for attending" doesn't match the register of a premium Summit - or give senior audiences a reason to re-engage.</p>
-      </div>
-
-      <div class="p-card">
-        <div class="p-icon">
-          <svg width="64" height="48" viewBox="0 0 96 72" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 60V14M14 60h72"/>
-            <path d="M22 46l12 2 10-4 12 6 10-2 12-2" stroke="#F5620F" stroke-width="2.6"/>
-            <circle cx="22" cy="46" r="2.6" fill="#F5620F" stroke="none"/>
-            <circle cx="34" cy="48" r="2.6" fill="#F5620F" stroke="none"/>
-            <circle cx="44" cy="44" r="2.6" fill="#F5620F" stroke="none"/>
-            <circle cx="56" cy="50" r="2.6" fill="#F5620F" stroke="none"/>
-            <circle cx="66" cy="48" r="2.6" fill="#F5620F" stroke="none"/>
-            <circle cx="78" cy="46" r="2.6" fill="#F5620F" stroke="none"/>
-          </svg>
-        </div>
-        <h3>A post-event report that says "we posted the photos"</h3>
-        <p>When your CMO asks what the event drove, anecdotes aren't the answer. You need attendee-level data.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════ SECTION 4 · SOLUTION -->
-<section class="solution-section">
-  <div class="container">
-    <div class="solution-intro">
-      <span class="eyebrow">The solution</span>
-      <h2>A branded destination your audience returns to - not a gallery link they ignore.</h2>
-      <p>Kampfire replaces the generic gallery with a mobile-first Engagement Hub - a personalized destination for every attendee that delivers their photos, your event content, your CTAs, and your messaging, all in one place.</p>
-    </div>
-
-    <div class="solution-grid">
-      <ul class="feature-list">
-        <li>
-          <span class="check">✓</span>
-          <div>
-            <h3>Find-me, not search</h3>
-            <p>One selfie. Every photo they're in. Plus host-curated favorites and the full gallery.</p>
-          </div>
-        </li>
-        <li>
-          <span class="check">✓</span>
-          <div>
-            <h3>Captions that write themselves - in your voice</h3>
-            <p>Auto-generated from the photo, your narrative, and the brand or sponsor you want amplified.</p>
-          </div>
-        </li>
-        <li>
-          <span class="check">✓</span>
-          <div>
-            <h3>A branded destination, not a folder</h3>
-            <p>Private URL, your event branding, open for as long as you need.</p>
-          </div>
-        </li>
-        <li>
-          <span class="check">✓</span>
-          <div>
-            <h3>Every interaction is a measurable signal</h3>
-            <p>Per-attendee views, clicks, downloads, shares - by default.</p>
-          </div>
-        </li>
-      </ul>
-
-      <div class="hub-showcase">
-        <img class="hub-img" src="Cais assets/engagement-hub-2.png" alt="The Kampfire Engagement Hub - a branded post-event destination with a selfie-upload entry to a personalized photo album" />
-      </div>
-    </div>
   </div>
 </section>
 
